@@ -6,7 +6,10 @@ apt-get upgrade -y
 apt-get update -y 
 
 # install dependent packages
-apt-get install -ylibcurl4-openssl-dev libssl-dev
+apt-get install -y libcurl4-openssl-dev libssl-dev
+
+# remove some packages
+apt autoremove 
 
 # download and install Anaconda
 wget https://repo.continuum.io/archive/Anaconda2-4.3.0-Linux-x86_64.sh
@@ -27,5 +30,5 @@ devtools::install_github('IRkernel/IRkernel')
 IRkernel::installspec()
 EOL
 
-# run the script for a batch installation of R packages
+# run the above script for a batch installation of R packages
 Rscript install_Jupyter_Rpackages.R
